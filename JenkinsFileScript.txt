@@ -1,4 +1,6 @@
-node {
+pipeline {
+   agent any
+      stages{
    stage ('clean'){
         bat label: 'clean', script: 'mvn clean'
    }
@@ -17,7 +19,8 @@ node {
      
    stage('verify Stage')
       {
-                             bat "mvn verify"
-                         }
+          bat "mvn verify"
+         }
        
+}
 }
